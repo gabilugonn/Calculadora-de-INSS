@@ -1,0 +1,88 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyP4ZGdHXZ6gQAxSUAMj0xpO",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/gabilugonn/Calculadora-de-INSS/blob/main/Calculadora-sal%C3%A1rio\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ea0bd212"
+      },
+      "source": [
+        "def calculate_net_salary(gross_salary, tax_rate, social_security_rate):\n",
+        "    \"\"\"\n",
+        "    Calculates the net salary after deducting tax and social security.\n",
+        "\n",
+        "    Args:\n",
+        "        gross_salary (float): The employee's gross salary.\n",
+        "        tax_rate (float): The tax rate as a decimal (e.g., 0.15 for 15%).\n",
+        "        social_security_rate (float): The social security rate as a decimal (e.g., 0.10 for 10%).\n",
+        "\n",
+        "    Returns:\n",
+        "        float: The net salary.\n",
+        "    \"\"\"\n",
+        "    tax_deduction = gross_salary * tax_rate\n",
+        "    social_security_deduction = gross_salary * social_security_rate\n",
+        "    net_salary = gross_salary - tax_deduction - social_security_deduction\n",
+        "    return net_salary"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6eb55344"
+      },
+      "source": [
+        "Now, let's use the `calculate_net_salary` function with an example. You can modify the `gross_salary`, `tax_rate`, and `social_security_rate` variables to test different scenarios."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "d5412cbb"
+      },
+      "source": [
+        "# Example usage:\n",
+        "gross_salary = 5000.00  # Example gross salary\n",
+        "tax_rate = 0.15         # 15% tax rate\n",
+        "social_security_rate = 0.10 # 10% social security rate\n",
+        "\n",
+        "# Calculate net salary\n",
+        "net_salary = calculate_net_salary(gross_salary, tax_rate, social_security_rate)\n",
+        "\n",
+        "print(f\"Gross Salary: R$ {gross_salary:.2f}\")\n",
+        "print(f\"Tax Deduction ({(tax_rate*100):.0f}%): R$ {(gross_salary * tax_rate):.2f}\")\n",
+        "print(f\"Social Security Deduction ({(social_security_rate*100):.0f}%): R$ {(gross_salary * social_security_rate):.2f}\")\n",
+        "print(f\"Net Salary: R$ {net_salary:.2f}\")"
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
